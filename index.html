@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>数字咖啡豆平台 · 品牌商招募</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111418;
+      --card: #1a1f26;
+      --card2: #20262e;
+      --border: #2a3040;
+      --green: #4ade80;
+      --green-dim: #1a3a28;
+      --orange: #f97316;
+      --orange-dim: #3a1f0a;
+      --gold: #f59e0b;
+      --gold-dim: #3a2a08;
+      --blue: #60a5fa;
+      --text: #e8edf2;
+      --text-muted: #7a8899;
+      --text-dim: #4a5568;
+      --radius: 12px;
+      --radius-sm: 8px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: 40px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(160deg, #1a2535 0%, #111418 60%);
+      padding: 48px 20px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--green-dim);
+      color: var(--green);
+      border: 1px solid rgba(74,222,128,0.3);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+    .hero-badge::before { content: '●'; font-size: 8px; }
+    .hero h1 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .hero h1 span { color: var(--green); }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .hero-stat-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+    .hero-stat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      text-align: center;
+    }
+    .hero-stat .num { font-size: 18px; font-weight: 700; color: var(--green); }
+    .hero-stat .label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    /* Section */
+    .section { padding: 24px 16px 0; }
+    .section-title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title .icon { font-size: 16px; }
+    .card p { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+
+    /* Pain points */
+    .pain-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pain-item:last-child { border-bottom: none; }
+    .pain-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--orange);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+    .pain-item strong { color: var(--text); font-size: 13px; }
+    .pain-item span { color: var(--text-muted); font-size: 12px; display: block; margin-top: 2px; }
+
+    /* Feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .feature-item {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+    .feature-item .fi-icon { font-size: 20px; margin-bottom: 6px; }
+    .feature-item .fi-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .feature-item .fi-desc { font-size: 11px; color: var(--text-muted); line-height: 1.5; }
+
+    /* OMIX data row */
+    .data-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .data-item {
+      background: var(--card2);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+    }
+    .data-item .d-label { font-size: 11px; color: var(--text-muted); }
+    .data-item .d-val { font-size: 13px; font-weight: 600; color: var(--green); margin-top: 2px; }
+
+    /* Resources */
+    .resource-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .resource-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .resource-icon.green { background: var(--green-dim); }
+    .resource-icon.orange { background: var(--orange-dim); }
+    .resource-icon.blue { background: #1a2a3a; }
+    .resource-card h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+    .resource-card p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .tag {
+      background: var(--card2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Membership tabs */
+    .plan-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 4px;
+    }
+    .plan-tab {
+      flex: 1;
+      text-align: center;
+      padding: 8px 4px;
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      border: none;
+      background: transparent;
+    }
+    .plan-tab.active-std { background: var(--card2); color: #94a3b8; border: 1px solid var(--border); }
+    .plan-tab.active-pro { background: #1a2a1a; color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
+    .plan-tab.active-max { background: #2a2010; color: var(--gold); border: 1px solid rgba(245,158,11,0.3); }
+
+    .plan-card { display: none; }
+    .plan-card.active { display: block; }
+
+    .plan-header {
+      border-radius: var(--radius) var(--radius) 0 0;
+      padding: 20px 16px 16px;
+      margin: -1px -1px 0;
+    }
+    .plan-header.std { background: linear-gradient(135deg, #1e2530, #252d38); }
+    .plan-header.pro { background: linear-gradient(135deg, #1a2a1a, #1e3020); }
+    .plan-header.max { background: linear-gradient(135deg, #2a2010, #302818); }
+
+    .plan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .plan-badge.std { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+    .plan-badge.pro { background: var(--green-dim); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
+    .plan-badge.max { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245,158,11,0.3); }
+
+    .plan-price { font-size: 28px; font-weight: 800; color: #fff; }
+    .plan-price span { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+    .plan-fit { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+    .plan-body { padding: 0 0 4px; }
+    .benefit-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .benefit-row:last-child { border-bottom: none; }
+    .benefit-key { font-size: 12px; color: var(--text-muted); flex: 1; }
+    .benefit-val { font-size: 12px; color: var(--text); text-align: right; max-width: 55%; }
+    .benefit-val.yes { color: var(--green); }
+    .benefit-val.no { color: var(--text-dim); }
+    .benefit-val.gold { color: var(--gold); }
+    .hw-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* Compare table */
+    .compare-wrap { overflow-x: auto; margin-top: 4px; }
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .compare-table th {
+      padding: 10px 8px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .compare-table th:first-child { text-align: left; color: var(--text-muted); }
+    .compare-table th.std { color: #94a3b8; }
+    .compare-table th.pro { color: var(--green); }
+    .compare-table th.max { color: var(--gold); }
+    .compare-table td {
+      padding: 9px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+    }
+    .compare-table td:first-child { text-align: left; color: var(--text-muted); }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table .yes { color: var(--green); }
+    .compare-table .no { color: var(--text-dim); }
+    .compare-table .gold { color: var(--gold); }
+
+    /* Promo banner */
+    .promo-banner {
+      background: linear-gradient(135deg, var(--orange-dim), #2a1a08);
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-top: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .promo-banner .pi { font-size: 20px; flex-shrink: 0; }
+    .promo-banner h4 { font-size: 13px; font-weight: 600; color: var(--orange); margin-bottom: 4px; }
+    .promo-banner p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* Steps */
+    .step-list { padding: 4px 0; }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      position: relative;
+    }
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 40px;
+      bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .step-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--card2);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .step-content h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+    .step-content p { font-size: 12px; color: var(--text-muted); }
+
+    /* Contact */
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-item:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: var(--card2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .contact-label { font-size: 11px; color: var(--text-muted); }
+    .contact-val { font-size: 13px; color: var(--text); margin-top: 1px; }
+
+    .qr-placeholder {
+      background: var(--card2);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      margin-top: 12px;
+      color: var(--text-dim);
+      font-size: 12px;
+    }
+    .qr-placeholder .qr-box {
+      width: 80px; height: 80px;
+      background: var(--border);
+      border-radius: 8px;
+      margin: 0 auto 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 24px 16px 8px;
+      color: var(--text-dim);
+      font-size: 11px;
+      line-height: 1.8;
+      border-top: 1px solid var(--border);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">品牌商招募计划</div>
+  <h1>数字咖啡豆平台<br><span>Digital Coffee Bean</span></h1>
+  <p class="hero-sub">让每一颗咖啡豆，都拥有自己的数字身份</p>
+  <div class="hero-stat-row">
+    <div class="hero-stat">
+      <div class="num">10万+</div>
+      <div class="label">注册用户</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">3种</div>
+      <div class="label">会员方案</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">全年</div>
+      <div class="label">线下活动</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 1: 项目介绍 -->
+<div class="section">
+  <div class="section-title">项目介绍</div>
+  <div class="card">
+    <p style="color:var(--text);font-size:13px;line-height:1.7;">
+      <strong style="color:#fff;">数字咖啡豆（Digital Coffee Bean）</strong> 是一套以图片为载体的咖啡信息展示解决方案。品牌商只需完成一次信息录入，即可生成一张包含完整咖啡豆档案的数字卡片，随时随地分享给消费者、买手或赛事评审。
+    </p>
+  </div>
+
+  <div class="section-title" style="margin-top:16px;">当前市场三大痛点</div>
+  <div class="card">
+    <div class="pain-item">
+      <div class="pain-dot"></div>
+      <div>
+        <strong>信息不透明</strong>
+        <span>消费者难以获取咖啡豆的完整溯源与风味信息</span>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot"></div>
+      <div>
+        <strong>展示成本高</strong>
+        <span>展会活动需大量印刷物料，成本高且难以更新</span>
+      </div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot"></div>
+      <div>
+        <strong>数据难沉淀</strong>
+        <span>冲煮参数、检测数据分散，无法形成品牌资产</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 2: 数字咖啡豆功能 -->
+<div class="section">
+  <div class="section-title">数字咖啡豆能为品牌商带来什么</div>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="fi-icon">📋</div>
+      <div class="fi-title">咖啡豆基本档案</div>
+      <div class="fi-desc">产地、处理法、品种、海拔、烘焙度、烘焙日期</div>
+    </div>
+    <div class="feature-item">
+      <div class="fi-icon">🌈</div>
+      <div class="fi-title">OmniFlavor 风味标签</div>
+      <div class="fi-desc">独有风味标注体系，降低消费者沟通门槛</div>
+    </div>
+    <div class="feature-item">
+      <div class="fi-icon">☕</div>
+      <div class="fi-title">推荐冲煮参数</div>
+      <div class="fi-desc">粉量、水量、水温、时间、比例、研磨度</div>
+    </div>
+    <div class="feature-item">
+      <div class="fi-icon">📊</div>
+      <div class="fi-title">风味坐标图</div>
+      <div class="fi-desc">酸度/甜度双轴可视化，一眼读懂风味个性</div>
+    </div>
+    <div class="feature-item">
+      <div class="fi-icon">📝</div>
+      <div class="fi-title">冲煮笔记</div>
+      <div class="fi-desc">烘焙师专业心得，传递品牌温度与专业背书</div>
+    </div>
+    <div class="feature-item">
+      <div class="fi-icon">🔬</div>
+      <div class="fi-title">OMIX 检测数据</div>
+      <div class="fi-desc">密度、水分、水活度、Agtron 值专业数据</div>
+    </div>
+  </div>
+  <div class="data-row">
+    <div class="data-item">
+      <div class="d-label">密度</div>
+      <div class="d-val">烘焙均匀度</div>
+    </div>
+    <div class="data-item">
+      <div class="d-label">水分含量</div>
+      <div class="d-val">品质稳定性</div>
+    </div>
+    <div class="data-item">
+      <div class="d-label">水活度</div>
+      <div class="d-val">食品安全指标</div>
+    </div>
+    <div class="data-item">
+      <div class="d-label">Agtron 值</div>
+      <div class="d-val">烘焙度量化</div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: 平台资源 -->
+<div class="section">
+  <div class="section-title">平台资源与曝光机会</div>
+  <div class="resource-card">
+    <div class="resource-icon green">📱</div>
+    <div>
+      <h4>APP 用户触达</h4>
+      <p>平台现有 <strong style="color:var(--green)">10万+</strong> 注册用户，覆盖咖啡爱好者、独立咖啡馆主理人、专业烘焙师，品牌主页持续展示形成长效曝光。</p>
+    </div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-icon orange">🎪</div>
+    <div>
+      <h4>线下活动联动</h4>
+      <p>为会员品牌商提供多维度线下曝光机会</p>
+      <div class="tag-row">
+        <span class="tag">展会合作</span>
+        <span class="tag">赛事活动</span>
+        <span class="tag">城市快闪</span>
+        <span class="tag">WBC 周边</span>
+      </div>
+    </div>
+  </div>
+  <div class="resource-card">
+    <div class="resource-icon blue">🤝</div>
+    <div>
+      <h4>品牌背书</h4>
+      <p>数字咖啡豆卡片可嵌入品牌商自有渠道（官网、小程序、社交媒体），以平台专业形象为品牌增信。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 4: 会员方案 -->
+<div class="section">
+  <div class="section-title">会员阶梯方案</div>
+
+  <div class="plan-tabs">
+    <button class="plan-tab active-std" onclick="switchPlan('std', this)">🥈 标准</button>
+    <button class="plan-tab" onclick="switchPlan('pro', this)">🥇 专业</button>
+    <button class="plan-tab" onclick="switchPlan('max', this)">💎 Max</button>
+  </div>
+
+  <!-- Standard -->
+  <div class="card plan-card active" id="plan-std">
+    <div class="plan-header std" style="margin:-16px -16px 16px;padding:20px 16px 16px;border-radius:11px 11px 0 0;">
+      <div class="plan-badge std">🥈 Standard Member</div>
+      <div class="plan-price">¥2,980 <span>/ 年</span></div>
+      <div class="plan-fit">适合：精品咖啡小微品牌 · 独立烘焙工作室 · 新兴咖啡品牌</div>
+    </div>
+    <div class="plan-body">
+      <div class="benefit-row"><span class="benefit-key">数字咖啡豆数量</span><span class="benefit-val">20 款 / 年</span></div>
+      <div class="benefit-row"><span class="benefit-key">OmniFlavor 风味标签</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">推荐冲煮参数</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">风味坐标图</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">冲煮笔记</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">OMIX 检测数据</span><span class="benefit-val no">— 不包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">硬件设备赠送</span><span class="benefit-val no">— 不包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">APP 品牌主页</span><span class="benefit-val">基础展示页</span></div>
+      <div class="benefit-row"><span class="benefit-key">线下活动曝光</span><span class="benefit-val">1 次 / 年</span></div>
+      <div class="benefit-row"><span class="benefit-key">数据分析报告</span><span class="benefit-val">季度摘要</span></div>
+      <div class="benefit-row"><span class="benefit-key">客服支持</span><span class="benefit-val">工作日邮件</span></div>
+    </div>
+  </div>
+
+  <!-- Professional -->
+  <div class="card plan-card" id="plan-pro">
+    <div class="plan-header pro" style="margin:-16px -16px 16px;padding:20px 16px 16px;border-radius:11px 11px 0 0;">
+      <div class="plan-badge pro">🥇 Professional Member</div>
+      <div class="plan-price">¥7,980 <span>/ 年</span></div>
+      <div class="plan-fit">适合：成熟精品咖啡品牌 · 连锁烘焙品牌 · 咖啡庄园代理商</div>
+    </div>
+    <div class="plan-body">
+      <div class="benefit-row"><span class="benefit-key">数字咖啡豆数量</span><span class="benefit-val yes">无限制</span></div>
+      <div class="benefit-row"><span class="benefit-key">OmniFlavor 风味标签</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">推荐冲煮参数</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">风味坐标图</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">冲煮笔记</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">OMIX 检测数据</span><span class="benefit-val yes">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">硬件设备赠送</span><span class="benefit-val no">— 不包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">APP 品牌主页</span><span class="benefit-val">增强展示页</span></div>
+      <div class="benefit-row"><span class="benefit-key">线下活动曝光</span><span class="benefit-val yes">不限次数 + 优先展位</span></div>
+      <div class="benefit-row"><span class="benefit-key">赛事供豆资格</span><span class="benefit-val yes">优先邀请</span></div>
+      <div class="benefit-row"><span class="benefit-key">数据分析报告</span><span class="benefit-val">月度详细报告</span></div>
+      <div class="benefit-row"><span class="benefit-key">联合营销</span><span class="benefit-val yes">2 次 / 年</span></div>
+      <div class="benefit-row"><span class="benefit-key">专属客户经理</span><span class="benefit-val yes">✓ 一对一</span></div>
+      <div class="benefit-row"><span class="benefit-key">新功能内测</span><span class="benefit-val yes">✓ 包含</span></div>
+    </div>
+  </div>
+
+  <!-- Max -->
+  <div class="card plan-card" id="plan-max">
+    <div class="plan-header max" style="margin:-16px -16px 16px;padding:20px 16px 16px;border-radius:11px 11px 0 0;">
+      <div class="plan-badge max">💎 Max Member</div>
+      <div class="plan-price" style="color:var(--gold);">¥25,800 <span style="color:var(--text-muted);">/ 年</span></div>
+      <div class="plan-fit">适合：头部精品咖啡品牌 · 咖啡庄园直营商 · 专业烘焙机构</div>
+    </div>
+    <div class="plan-body">
+      <div class="benefit-row"><span class="benefit-key">数字咖啡豆数量</span><span class="benefit-val gold">无限制</span></div>
+      <div class="benefit-row"><span class="benefit-key">OmniFlavor 风味标签</span><span class="benefit-val gold">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">推荐冲煮参数</span><span class="benefit-val gold">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">风味坐标图</span><span class="benefit-val gold">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">冲煮笔记</span><span class="benefit-val gold">✓ 包含</span></div>
+      <div class="benefit-row"><span class="benefit-key">OMIX 检测数据</span><span class="benefit-val gold">✓ 包含</span></div>
+      <div class="benefit-row">
+        <span class="benefit-key">🎁 硬件设备礼包</span>
+        <span class="benefit-val"><span class="hw-badge">赠送套装</span></span>
+      </div>
+      <div style="background:var(--gold-dim);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:10px 12px;margin:4px 0 8px;font-size:12px;color:var(--text-muted);">
+        包含 <strong style="color:var(--gold);">OMIX 检测仪</strong>、<strong style="color:var(--gold);">浓度仪（TDS）</strong>、<strong style="color:var(--gold);">高精度电子秤</strong>
+      </div>
+      <div class="benefit-row"><span class="benefit-key">APP 品牌主页</span><span class="benefit-val gold">旗舰展示页</span></div>
+      <div class="benefit-row"><span class="benefit-key">线下活动曝光</span><span class="benefit-val gold">不限次数 + 核心展位</span></div>
+      <div class="benefit-row"><span class="benefit-key">赛事供豆资格</span><span class="benefit-val gold">官方合作伙伴</span></div>
+      <div class="benefit-row"><span class="benefit-key">数据分析报告</span><span class="benefit-val gold">月度 + 年度洞察</span></div>
+      <div class="benefit-row"><span class="benefit-key">联合营销</span><span class="benefit-val gold">4 次/年 + 品牌专访</span></div>
+      <div class="benefit-row"><span class="benefit-key">专属客户经理</span><span class="benefit-val gold">✓ 高级服务</span></div>
+      <div class="benefit-row"><span class="benefit-key">新功能内测</span><span class="benefit-val gold">✓ + 产品共创</span></div>
+      <div class="benefit-row"><span class="benefit-key">品牌认证标识</span><span class="benefit-val gold">✓ Max 认证</span></div>
+    </div>
+  </div>
+
+  <!-- Compare -->
+  <div class="section-title" style="margin-top:20px;">方案对比一览</div>
+  <div class="card">
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="std">标准</th>
+            <th class="pro">专业</th>
+            <th class="max">Max</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>年费</td><td>¥2,980</td><td style="color:var(--green)">¥7,980</td><td style="color:var(--gold)">¥25,800</td></tr>
+          <tr><td>咖啡豆数量</td><td>20款/年</td><td class="yes">无限制</td><td class="gold">无限制</td></tr>
+          <tr><td>OMIX 数据</td><td class="no">—</td><td class="yes">✓</td><td class="gold">✓</td></tr>
+          <tr><td>硬件礼包</td><td class="no">—</td><td class="no">—</td><td class="gold">✓ 全套</td></tr>
+          <tr><td>线下活动</td><td>1次/年</td><td class="yes">不限+优先</td><td class="gold">不限+核心</td></tr>
+          <tr><td>赛事供豆</td><td class="no">—</td><td class="yes">优先邀请</td><td class="gold">官方合作</td></tr>
+          <tr><td>联合营销</td><td class="no">—</td><td class="yes">2次/年</td><td class="gold">4次+专访</td></tr>
+          <tr><td>品牌认证</td><td class="no">—</td><td class="no">—</td><td class="gold">✓ Max</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="promo-banner">
+    <div class="pi">💡</div>
+    <div>
+      <h4>首年限时优惠</h4>
+      <p>2025年内完成签约：标准会员 <strong style="color:var(--orange)">8.5折 ¥2,533</strong>，专业会员 <strong style="color:var(--orange)">8折 ¥6,384</strong>，Max 会员 <strong style="color:var(--orange)">7.5折 ¥19,350</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 5: 加入流程 -->
+<div class="section">
+  <div class="section-title">加入流程</div>
+  <div class="card">
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>提交申请</h4>
+          <p>填写品牌商入驻申请表，提供品牌基本信息与产品资质</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>资质审核</h4>
+          <p>平台团队 3 个工作日内完成审核，确保品牌符合精品咖啡标准</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>选择方案</h4>
+          <p>根据品牌规模与需求选择标准、专业或 Max 会员方案</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>签约付款</h4>
+          <p>完成服务协议签署与年费支付</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <h4>信息录入</h4>
+          <p>自主录入咖啡豆信息，或由平台协助完成首批数字咖啡豆创建</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <h4>正式上线</h4>
+          <p>数字咖啡豆在 APP 及品牌主页发布，开始触达用户</p>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--green-dim);border:1px solid rgba(74,222,128,0.2);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12px;color:var(--green);text-align:center;">
+      预计从申请到上线：<strong>5–7 个工作日</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Section 6: 联系我们 -->
+<div class="section">
+  <div class="section-title">联系我们</div>
+  <div class="card">
+    <div class="contact-item">
+      <div class="contact-icon">📧</div>
+      <div>
+        <div class="contact-label">商务合作邮箱</div>
+        <div class="contact-val">[business@example.com]</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">💬</div>
+      <div>
+        <div class="contact-label">微信公众号</div>
+        <div class="contact-val">[公众号名称]</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📱</div>
+      <div>
+        <div class="contact-label">商务微信</div>
+        <div class="contact-val">[微信号]</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🌐</div>
+      <div>
+        <div class="contact-label">官方网站</div>
+        <div class="contact-val">[https://www.example.com]</div>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div>
+        <div class="contact-label">联系电话</div>
+        <div class="contact-val">[电话号码]</div>
+      </div>
+    </div>
+  </div>
+  <div class="qr-placeholder">
+    <div class="qr-box">⬛</div>
+    扫描二维码添加商务微信<br>获取完整版招募手册与入驻申请表
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 数字咖啡豆平台 · 保留所有权利<br>
+  本文档内容仅供合作洽谈参考，最终权益以正式服务协议为准
+</div>
+
+<script>
+  function switchPlan(type, btn) {
+    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.plan-tab').forEach(t => {
+      t.classList.remove('active-std', 'active-pro', 'active-max');
+    });
+    document.getElementById('plan-' + type).classList.add('active');
+    btn.classList.add('active-' + type);
+  }
+</script>
+</body>
+</html>
