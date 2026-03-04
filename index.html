@@ -15,135 +15,48 @@
       --text: #e8edf2; --text-muted: #7a8899; --text-dim: #4a5568;
       --radius: 12px; --radius-sm: 8px;
     }
-    body {
-      background: var(--bg); color: var(--text);
-      font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif;
-      font-size: 14px; line-height: 1.6;
-      max-width: 480px; margin: 0 auto; padding-bottom: 48px;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(170deg, #0d1117 0%, #131a24 30%, #0f1923 60%, #111418 100%);
-      padding: 56px 20px 40px; text-align: center;
-      position: relative; overflow: hidden;
-      border-bottom: 1px solid rgba(74,222,128,0.1);
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -60%; left: -30%; width: 160%; height: 160%;
-      background: radial-gradient(ellipse at 50% 30%, rgba(74,222,128,0.06) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(74,222,128,0.3), transparent);
-    }
-    .hero-top-label {
-      font-size: 10px; font-weight: 600; letter-spacing: 3px;
-      color: var(--text-dim); text-transform: uppercase; margin-bottom: 20px;
-    }
-    .hero-logo {
-      font-size: 13px; font-weight: 700; letter-spacing: 6px;
-      color: rgba(255,255,255,0.9); margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: 28px; font-weight: 300; line-height: 1.35;
-      color: rgba(255,255,255,0.95); margin-bottom: 6px;
-      letter-spacing: 1px;
-    }
-    .hero h1 em {
-      font-style: normal; font-weight: 600;
-      background: linear-gradient(135deg, var(--green), #86efac);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-sub {
-      color: var(--text-muted); font-size: 13px; margin-bottom: 28px;
-      line-height: 1.7; letter-spacing: 0.3px;
-    }
-    .hero-divider {
-      width: 40px; height: 1px; margin: 0 auto 24px;
-      background: linear-gradient(90deg, transparent, var(--green), transparent);
-    }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif; font-size: 14px; line-height: 1.6; max-width: 480px; margin: 0 auto; padding-bottom: 48px; }
+    .hero { background: linear-gradient(170deg, #0d1117 0%, #131a24 30%, #0f1923 60%, #111418 100%); padding: 56px 20px 40px; text-align: center; position: relative; overflow: hidden; border-bottom: 1px solid rgba(74,222,128,0.1); }
+    .hero::before { content: ''; position: absolute; top: -60%; left: -30%; width: 160%; height: 160%; background: radial-gradient(ellipse at 50% 30%, rgba(74,222,128,0.06) 0%, transparent 60%); pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(74,222,128,0.3), transparent); }
+    .hero-top-label { font-size: 10px; font-weight: 600; letter-spacing: 3px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 20px; }
+    .hero-logo { font-size: 13px; font-weight: 700; letter-spacing: 6px; color: rgba(255,255,255,0.9); margin-bottom: 6px; text-transform: uppercase; }
+    .hero h1 { font-size: 28px; font-weight: 300; line-height: 1.35; color: rgba(255,255,255,0.95); margin-bottom: 6px; letter-spacing: 1px; }
+    .hero h1 em { font-style: normal; font-weight: 600; background: linear-gradient(135deg, var(--green), #86efac); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-sub { color: var(--text-muted); font-size: 13px; margin-bottom: 28px; line-height: 1.7; letter-spacing: 0.3px; }
+    .hero-divider { width: 40px; height: 1px; margin: 0 auto 24px; background: linear-gradient(90deg, transparent, var(--green), transparent); }
     .hero-stat-row { display: flex; justify-content: center; gap: 12px; position: relative; z-index: 1; }
-    .hero-stat {
-      background: rgba(26,31,38,0.8); border: 1px solid rgba(42,48,64,0.6);
-      border-radius: var(--radius); padding: 14px 18px; text-align: center;
-      backdrop-filter: blur(8px);
-    }
+    .hero-stat { background: rgba(26,31,38,0.8); border: 1px solid rgba(42,48,64,0.6); border-radius: var(--radius); padding: 14px 18px; text-align: center; backdrop-filter: blur(8px); }
     .hero-stat .num { font-size: 18px; font-weight: 700; color: #fff; }
     .hero-stat .label { font-size: 10px; color: var(--text-muted); margin-top: 3px; letter-spacing: 0.5px; }
-
-    /* Section */
     .section { padding: 24px 16px 0; }
-    .section-title {
-      font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
-      color: var(--text-muted); text-transform: uppercase;
-      margin-bottom: 12px; padding-left: 4px;
-    }
-
-    /* Card */
-    .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 16px; margin-bottom: 10px;
-    }
+    .section-title { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; padding-left: 4px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 10px; }
     .card p { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
-
-    /* Pain table */
-    .pain-item {
-      display: flex; gap: 10px; padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .pain-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
     .pain-item:last-child { border-bottom: none; }
-    .pain-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); margin-top: 7px; flex-shrink: 0; }
+    .pain-dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
     .pain-item strong { color: var(--text); font-size: 13px; }
     .pain-item span { color: var(--text-muted); font-size: 12px; display: block; margin-top: 2px; }
-
-    /* Hardware chain */
     .hw-chain { display: flex; flex-direction: column; gap: 8px; }
-    .hw-row {
-      display: flex; align-items: flex-start; gap: 10px;
-      background: var(--card2); border: 1px solid var(--border);
-      border-radius: var(--radius-sm); padding: 10px 12px;
-    }
+    .hw-row { display: flex; align-items: flex-start; gap: 10px; background: var(--card2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 12px; }
     .hw-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
     .hw-label { font-size: 12px; font-weight: 600; color: var(--text); }
     .hw-desc { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-
-    /* Archive layers */
-    .layer-item {
-      padding: 10px 0; border-bottom: 1px solid var(--border);
-    }
+    .layer-item { padding: 10px 0; border-bottom: 1px solid var(--border); }
     .layer-item:last-child { border-bottom: none; }
     .layer-header { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
     .layer-title { font-size: 13px; font-weight: 600; color: var(--text); }
-    .layer-badge {
-      font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600;
-    }
+    .layer-badge { font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; }
     .layer-badge.live { background: var(--green-dim); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
     .layer-badge.building { background: var(--orange-dim); color: var(--orange); border: 1px solid rgba(249,115,22,0.3); }
     .layer-badge.wip { background: var(--card2); color: var(--text-muted); border: 1px solid var(--border); }
     .layer-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-    .tag {
-      background: var(--card2); border: 1px solid var(--border);
-      border-radius: 20px; padding: 3px 9px; font-size: 11px; color: var(--text-muted);
-    }
-
-    /* Resource cards */
-    .resource-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px;
-      display: flex; gap: 12px; align-items: flex-start;
-    }
-    .resource-icon {
-      width: 36px; height: 36px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; flex-shrink: 0;
-    }
+    .tag { background: var(--card2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 9px; font-size: 11px; color: var(--text-muted); }
+    .resource-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 8px; display: flex; gap: 12px; align-items: flex-start; }
+    .resource-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
     .resource-icon.green { background: var(--green-dim); }
     .resource-icon.orange { background: var(--orange-dim); }
-    .resource-icon.blue { background: var(--blue-dim); }
     .resource-icon.gold { background: var(--gold-dim); }
     .resource-card h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 4px; }
     .resource-card p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
@@ -151,155 +64,61 @@
     .adv-list { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
     .adv-item { display: flex; gap: 8px; font-size: 12px; color: var(--text-muted); }
     .adv-item::before { content: '→'; color: var(--green); flex-shrink: 0; }
-
-    /* Fee structure */
-    .fee-row {
-      display: flex; gap: 10px; padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .fee-row { display: flex; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--border); }
     .fee-row:last-child { border-bottom: none; }
-    .fee-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--card2); display: flex; align-items: center;
-      justify-content: center; font-size: 16px; flex-shrink: 0;
-    }
+    .fee-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--card2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
     .fee-title { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
     .fee-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-
-    /* Plan tabs */
-    .plan-tabs {
-      display: flex; gap: 6px; margin-bottom: 14px;
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 4px;
-    }
-    .plan-tab {
-      flex: 1; text-align: center; padding: 8px 4px;
-      border-radius: var(--radius-sm); font-size: 12px; font-weight: 600;
-      cursor: pointer; color: var(--text-muted);
-      border: none; background: transparent; transition: all 0.2s;
-    }
-    .plan-tab.active-starter { background: var(--card2); color: #94a3b8; border: 1px solid var(--border); }
+    .plan-tabs { display: flex; gap: 6px; margin-bottom: 14px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 4px; }
+    .plan-tab { flex: 1; text-align: center; padding: 8px 4px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; cursor: pointer; color: var(--text-muted); border: none; background: transparent; transition: all 0.2s; }
     .plan-tab.active-pro { background: var(--green-dim); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
     .plan-tab.active-max { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245,158,11,0.3); }
-
-    .plan-card { display: none; }
-    .plan-card.active { display: block; }
-
+    .plan-card { display: none; } .plan-card.active { display: block; }
     .plan-header { padding: 20px 16px 16px; margin: -16px -16px 16px; border-radius: 11px 11px 0 0; }
-    .plan-header.starter { background: linear-gradient(135deg, #1e2530, #252d38); }
     .plan-header.pro { background: linear-gradient(135deg, #1a2a1a, #1e3020); }
     .plan-header.max { background: linear-gradient(135deg, #2a2010, #302818); }
-
-    .plan-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      border-radius: 20px; padding: 3px 10px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px;
-    }
-    .plan-badge.starter { background: rgba(148,163,184,0.15); color: #94a3b8; border: 1px solid rgba(148,163,184,0.2); }
+    .plan-badge { display: inline-flex; align-items: center; gap: 5px; border-radius: 20px; padding: 3px 10px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; }
     .plan-badge.pro { background: var(--green-dim); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
     .plan-badge.max { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(245,158,11,0.3); }
-
     .plan-price { font-size: 26px; font-weight: 800; color: #fff; }
     .plan-price span { font-size: 13px; font-weight: 400; color: var(--text-muted); }
     .plan-commission { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
     .plan-commission strong { color: var(--orange); }
     .plan-fit { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
-    .plan-value {
-      background: rgba(255,255,255,0.05); border-radius: 6px;
-      padding: 8px 10px; margin-top: 10px;
-      font-size: 12px; color: var(--text-muted); font-style: italic;
-    }
-
-    .benefit-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 9px 0; border-bottom: 1px solid var(--border); gap: 8px;
-    }
+    .plan-value { background: rgba(255,255,255,0.05); border-radius: 6px; padding: 8px 10px; margin-top: 10px; font-size: 12px; color: var(--text-muted); font-style: italic; }
+    .benefit-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); gap: 8px; }
     .benefit-row:last-child { border-bottom: none; }
     .benefit-key { font-size: 12px; color: var(--text-muted); flex: 1; }
     .benefit-val { font-size: 12px; color: var(--text); text-align: right; max-width: 55%; }
-    .benefit-val.yes { color: var(--green); }
-    .benefit-val.no { color: var(--text-dim); }
-    .benefit-val.gold { color: var(--gold); }
-    .hw-gift {
-      background: var(--gold-dim); border: 1px solid rgba(245,158,11,0.25);
-      border-radius: 8px; padding: 10px 12px; margin: 4px 0 8px;
-      font-size: 12px; color: var(--text-muted); line-height: 1.6;
-    }
+    .benefit-val.yes { color: var(--green); } .benefit-val.no { color: var(--text-dim); } .benefit-val.gold { color: var(--gold); }
+    .hw-gift { background: var(--gold-dim); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; padding: 10px 12px; margin: 4px 0 8px; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
     .hw-gift strong { color: var(--gold); }
-
-    /* Compare */
     .compare-wrap { overflow-x: auto; }
     .compare-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    .compare-table th {
-      padding: 10px 8px; text-align: center; font-weight: 600;
-      border-bottom: 1px solid var(--border); white-space: nowrap;
-    }
+    .compare-table th { padding: 10px 8px; text-align: center; font-weight: 600; border-bottom: 1px solid var(--border); white-space: nowrap; }
     .compare-table th:first-child { text-align: left; color: var(--text-muted); }
-    .compare-table th.starter { color: #94a3b8; }
-    .compare-table th.pro { color: var(--green); }
-    .compare-table th.max { color: var(--gold); }
-    .compare-table td {
-      padding: 9px 8px; border-bottom: 1px solid var(--border);
-      text-align: center; color: var(--text-muted);
-    }
+    .compare-table th.pro { color: var(--green); } .compare-table th.max { color: var(--gold); }
+    .compare-table td { padding: 9px 8px; border-bottom: 1px solid var(--border); text-align: center; color: var(--text-muted); }
     .compare-table td:first-child { text-align: left; }
     .compare-table tr:last-child td { border-bottom: none; }
-    .compare-table .yes { color: var(--green); }
-    .compare-table .no { color: var(--text-dim); }
-    .compare-table .gold { color: var(--gold); }
-
-    /* Promo */
-    .promo-banner {
-      background: linear-gradient(135deg, var(--orange-dim), #2a1a08);
-      border: 1px solid rgba(249,115,22,0.3); border-radius: var(--radius);
-      padding: 14px 16px; margin-top: 12px; display: flex; gap: 10px;
-    }
+    .compare-table .yes { color: var(--green); } .compare-table .no { color: var(--text-dim); } .compare-table .gold { color: var(--gold); }
+    .promo-banner { background: linear-gradient(135deg, var(--orange-dim), #2a1a08); border: 1px solid rgba(249,115,22,0.3); border-radius: var(--radius); padding: 14px 16px; margin-top: 12px; display: flex; gap: 10px; }
     .promo-banner .pi { font-size: 20px; flex-shrink: 0; }
     .promo-banner h4 { font-size: 13px; font-weight: 600; color: var(--orange); margin-bottom: 4px; }
     .promo-banner p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
-
-    /* Steps */
     .step-item { display: flex; gap: 12px; padding: 12px 0; position: relative; }
-    .step-item:not(:last-child)::after {
-      content: ''; position: absolute; left: 15px; top: 40px; bottom: 0;
-      width: 1px; background: var(--border);
-    }
-    .step-num {
-      width: 30px; height: 30px; border-radius: 50%;
-      background: var(--card2); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: var(--green); flex-shrink: 0; z-index: 1;
-    }
+    .step-item:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 40px; bottom: 0; width: 1px; background: var(--border); }
+    .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--card2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--green); flex-shrink: 0; z-index: 1; }
     .step-content h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 3px; }
     .step-content p { font-size: 12px; color: var(--text-muted); }
-
-    /* Contact */
-    .contact-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 12px 0; border-bottom: 1px solid var(--border);
-    }
+    .contact-item { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
     .contact-item:last-child { border-bottom: none; }
-    .contact-icon {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: var(--card2); display: flex; align-items: center;
-      justify-content: center; font-size: 16px; flex-shrink: 0;
-    }
+    .contact-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--card2); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
     .contact-label { font-size: 11px; color: var(--text-muted); }
     .contact-val { font-size: 13px; color: var(--text); margin-top: 1px; }
-    .qr-placeholder {
-      background: var(--card2); border: 1px dashed var(--border);
-      border-radius: var(--radius); padding: 24px; text-align: center;
-      margin-top: 12px; color: var(--text-dim); font-size: 12px;
-    }
-    .qr-placeholder .qr-box {
-      width: 80px; height: 80px; background: var(--border); border-radius: 8px;
-      margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 28px;
-    }
-    .footer {
-      text-align: center; padding: 24px 16px 8px;
-      color: var(--text-dim); font-size: 11px; line-height: 1.8;
-      border-top: 1px solid var(--border); margin-top: 24px;
-    }
+    .qr-placeholder { background: var(--card2); border: 1px dashed var(--border); border-radius: var(--radius); padding: 24px; text-align: center; margin-top: 12px; color: var(--text-dim); font-size: 12px; }
+    .qr-placeholder .qr-box { width: 80px; height: 80px; background: var(--border); border-radius: 8px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 28px; }
+    .footer { text-align: center; padding: 24px 16px 8px; color: var(--text-dim); font-size: 11px; line-height: 1.8; border-top: 1px solid var(--border); margin-top: 24px; }
   </style>
 </head>
 <body>
@@ -307,9 +126,9 @@
 <!-- Hero -->
 <div class="hero">
   <div class="hero-top-label">Brand Partnership Program</div>
-  <div class="hero-logo">Digitally Archived by DiFluid</div>
+  <div class="hero-logo">DiFluid · CoffeeOS</div>
   <h1>数字<em>咖啡豆</em><br>品牌商合作招募</h1>
-  <p class="hero-sub"><br>从感性语言到工程语言，构建咖啡行业的数字基础设施</p>
+  <p class="hero-sub">不是在给豆子加故事，而是在给豆子加「说明书」<br>从感性语言到工程语言，构建咖啡行业的数字基础设施</p>
   <div class="hero-divider"></div>
   <div class="hero-stat-row">
     <div class="hero-stat"><div class="num">10万+</div><div class="label">活跃用户</div></div>
@@ -318,84 +137,162 @@
   </div>
 </div>
 
-<!-- 我们是谁 -->
+<!-- 一、消费者能获得什么 -->
+<div class="section">
+  <div class="section-title">消费者能获得什么</div>
+  <div class="card" style="border-color:rgba(74,222,128,0.15);">
+    <p style="color:var(--green);font-size:12px;font-weight:600;margin-bottom:6px;">数字咖啡豆的终极价值</p>
+    <p>让消费者获得<strong style="color:#fff;">确定性与安全感</strong>。</p>
+  </div>
+</div>
+
+<!-- 品质保障 -->
+<div class="section">
+  <div class="section-title">🛡️ 品质保障：买得更放心</div>
+  <div class="card">
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>风味稳定性</strong><span>烘焙度客观数值 + 批次一致性数据，帮助更稳定地选到心仪的风味</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>信息更完整</strong><span>Agtron 色值等物理指标补充传统描述，让信息更完整可感知</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>产地溯源</strong><span>全链条设备检测数据 + 防伪溯源二维码</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>新鲜度可知</strong><span>新鲜度曲线 + 最佳饮用窗口提示</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 冲煮指导 -->
+<div class="section">
+  <div class="section-title">☕ 冲煮指导：好喝更容易</div>
+  <div class="card">
+    <p style="margin-bottom:10px;">很多消费者的困惑是：<strong style="color:#fff;">买到了好豆，却不知道怎么冲出理想的味道</strong>。</p>
+    <div class="pain-item" style="border-bottom:none;padding-bottom:0;">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><span>推荐研磨度、水温、粉水比、萃取时间</span></div>
+    </div>
+    <div class="pain-item" style="border-bottom:none;padding-bottom:0;">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><span>官方冲煮方案直达消费者，设备联动一键复刻</span></div>
+    </div>
+    <div class="pain-item" style="border-bottom:none;padding-bottom:0;">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><span>时间模型支持不同赏味期内的参数动态调整</span></div>
+    </div>
+    <div style="background:var(--card2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:var(--text-muted);font-style:italic;">
+      "这批豆子建议 92℃，1:15 比例，28 秒萃取。" —— 降低学习成本，提高成功率。
+    </div>
+  </div>
+</div>
+
+<!-- 价格透明 + 规划中功能 -->
+<div class="section">
+  <div class="section-title">💰 价格透明：看懂差异</div>
+  <div class="card">
+    <p>面对不同价位的咖啡豆，消费者往往缺少判断依据。数字档案让品质差异变得可感知：</p>
+    <div class="layer-tags" style="margin-top:8px;">
+      <span class="tag">密度指标</span><span class="tag">缺陷率</span><span class="tag">烘焙曲线稳定性</span><span class="tag">批次一致性</span>
+    </div>
+    <p style="margin-top:10px;">从"看不懂为什么不同"到"数据帮你看清差异"。</p>
+  </div>
+
+  <div class="section-title" style="margin-top:14px;">🔮 更多规划中</div>
+  <div class="card">
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--blue)"></div>
+      <div><strong>个性匹配</strong><span>建立个人风味档案，系统基于数据推荐接近的豆子</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--blue)"></div>
+      <div><strong>健康参考</strong><span>咖啡因含量、酸度指标，帮助根据自身需求做出更合适的选择</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 二、品牌商需要做什么 & 能获得什么 -->
+<div class="section">
+  <div class="section-title">品牌商需要做什么</div>
+  <div class="card">
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--orange)"></div>
+      <div><strong>提供真实的咖啡豆数据</strong><span>使用 DiFluid 硬件生态或平台支持的方式，录入全链路数据</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--orange)"></div>
+      <div><strong>维护批次信息</strong><span>每个批次更新烘焙数据、库存状态、冲煮方案</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--orange)"></div>
+      <div><strong>自主管理发货</strong><span>通过数据甄选渠道产生的订单，品牌商从自有仓库直接发货</span></div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:14px;">品牌商能获得什么</div>
+  <div class="card">
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>溢价能力</strong><span>可量化的物理数据为主观描述提供客观支撑</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>信任建立</strong><span>数据共识补充品牌信任，多一层可验证的信用基础</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>冲煮体验闭环</strong><span>官方冲煮方案直达消费者，帮助还原品牌期望的风味表现</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>消费者数据回流</strong><span>TDS 数据、冲煮曲线回流品牌后台，产品迭代有据可依</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>展示成本降低</strong><span>数字卡片补充纸质物料，随批次持续更新</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>渠道扩展</strong><span>接入 CoffeeOS 10万+ 活跃用户流量池</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>风味期自主管控</strong><span>品牌商直接发货，精准控制库存周转</span></div>
+    </div>
+    <div class="pain-item">
+      <div class="pain-dot" style="background:var(--green)"></div>
+      <div><strong>线下曝光</strong><span>展会、赛事、快闪活动中的品牌露出与供豆机会</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 三、我们会做什么 -->
 <div class="section">
   <div class="section-title">我们是谁</div>
   <div class="card">
-    <p><strong style="color:#fff;">Digitally Archived by DiFluid</strong> 是一套以 IoT 硬件 + SaaS 系统为核心的咖啡行业数字化平台。通过「数字咖啡豆」体系，将每一颗咖啡豆转化为标准化的数字资产，打通从种植、处理、烘焙到消费者冲煮的全生命周期数据链路。</p>
+    <p><strong style="color:#fff;">CoffeeOS</strong> 是一套以 IoT 硬件 + SaaS 系统为核心的咖啡行业数字化平台。通过「数字咖啡豆」体系，将每一颗咖啡豆转化为标准化的数字资产，打通从种植、处理、烘焙到消费者冲煮的全生命周期数据链路。</p>
     <p style="margin-top:10px;color:var(--green);font-size:12px;font-weight:600;">我们不是内容平台，而是咖啡行业的数字基础设施。</p>
   </div>
 
   <div class="section-title" style="margin-top:16px;">硬件生态 · 全链路覆盖</div>
   <div class="card">
     <div class="hw-chain">
-      <div class="hw-row">
-        <div class="hw-icon">🔬</div>
-        <div>
-          <div class="hw-label">处理链路</div>
-          <div class="hw-desc">OMIX 检测仪 — 密度、水分、水活度、Agtron 值</div>
-        </div>
-      </div>
-      <div class="hw-row">
-        <div class="hw-icon">🔥</div>
-        <div>
-          <div class="hw-label">烘焙链路</div>
-          <div class="hw-desc">Flux 烘焙记录仪 — 自动生成烘焙曲线与数字档案</div>
-        </div>
-      </div>
-      
-      <div class="hw-row">
-        <div class="hw-icon">🌡️</div>
-        <div>
-          <div class="hw-label">品鉴链路</div>
-          <div class="hw-desc">Moment 咖啡测温风味仪 — 温度风味数据采集</div>
-        </div>
-      </div>
-      <div class="hw-row">
-        <div class="hw-icon">☕</div>
-        <div>
-          <div class="hw-label">冲煮链路</div>
-          <div class="hw-desc">智能咖啡秤、浓度计（TDS）— 冲煮数据记录与回流</div>
-        </div>
-      </div>
+      <div class="hw-row"><div class="hw-icon">🔥</div><div><div class="hw-label">烘焙链路</div><div class="hw-desc">Flux 烘焙记录仪 — 自动生成烘焙曲线与数字档案</div></div></div>
+      <div class="hw-row"><div class="hw-icon">🔬</div><div><div class="hw-label">检测链路</div><div class="hw-desc">OMIX 检测仪 — 密度、水分、水活度、Agtron 值</div></div></div>
+      <div class="hw-row"><div class="hw-icon">🌡️</div><div><div class="hw-label">品鉴链路</div><div class="hw-desc">Moment 咖啡测温风味仪 — 温度风味数据采集</div></div></div>
+      <div class="hw-row"><div class="hw-icon">☕</div><div><div class="hw-label">冲煮链路</div><div class="hw-desc">智能咖啡秤、浓度计（TDS）— 冲煮数据记录与回流</div></div></div>
     </div>
   </div>
 </div>
 
-<!-- 痛点 -->
+<!-- 数字档案体系 -->
 <div class="section">
-  <div class="section-title">品牌商面临的核心问题</div>
-  <div class="card">
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>溢价难以证明</strong><span>消费者无法验证产地、工艺的真实性 → 可量化物理数据 + 防伪溯源二维码</span></div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>冲煮体验断层</strong><span>好豆因缺乏参数指导被"毁掉" → 官方冲煮方案直达消费者，设备联动复刻风味</span></div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>销售后数据断层</strong><span>无法获知消费者真实冲煮反馈 → TDS 数据、冲煮曲线回流品牌后台</span></div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>展示成本高</strong><span>印刷物料成本高、难以更新 → 一张数字卡片替代所有纸质物料</span></div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>渠道触达有限</strong><span>品牌自有渠道用户规模受限 → 接入 CoffeeOS 10万+ 用户流量池</span></div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-dot"></div>
-      <div><strong>信任建立困难</strong><span>新品牌、跨国合作依赖主观信任 → 数据共识取代品牌信任，跨品牌可比</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- 数字档案 -->
-<div class="section">
-  <div class="section-title">数字咖啡豆档案</div>
+  <div class="section-title">数字咖啡豆档案体系</div>
   <div class="card" style="border-color:rgba(74,222,128,0.15);">
     <p style="color:var(--green);font-size:12px;font-weight:600;margin-bottom:8px;">DiFluid 咖啡豆数字档案 ≠ 主观评级</p>
     <p>通过全链条的生物物理数据记录与测量，为咖啡豆建立客观的"数据说明书"。所有数据来自同一设备体系，第一次实现跨品牌可比。</p>
@@ -404,9 +301,7 @@
   <div class="section-title" style="margin-top:14px;">三大核心价值</div>
   <div class="card">
     <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">① 数据真实性 Data Truth</span>
-      </div>
+      <div class="layer-header"><span class="layer-title">① 数据真实性 Data Truth</span></div>
       <p style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">数据来自 DiFluid 设备全链条真实检测，不是营销描述</p>
       <div class="layer-tags">
         <span class="tag">种植气候</span><span class="tag">土壤环境</span><span class="tag">含水率</span>
@@ -415,82 +310,34 @@
       </div>
     </div>
     <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">② 批次一致性 Batch Consistency</span>
-      </div>
+      <div class="layer-header"><span class="layer-title">② 批次一致性 Batch Consistency</span></div>
       <p style="font-size:12px;color:var(--text-muted);">色值区间有上下限，烘焙发展比例在合理波动范围内，时间模型预测衰减并独立展示预测值。</p>
     </div>
     <div class="layer-item" style="border-bottom:none;">
-      <div class="layer-header">
-        <span class="layer-title">③ 可复现性 Reproducibility</span>
-      </div>
+      <div class="layer-header"><span class="layer-title">③ 可复现性 Reproducibility</span></div>
       <p style="font-size:12px;color:var(--text-muted);">同一批次可被下一次烘焙复刻到相近数据区间，在不同设备上可对齐参考点。让风味不再是玄学。</p>
     </div>
   </div>
 
   <div class="section-title" style="margin-top:14px;">档案分层结构</div>
   <div class="card">
-    <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">基础基因层</span>
-        <span class="layer-badge live">已落地</span>
-      </div>
-      <div class="layer-tags">
-        <span class="tag">产地 GPS</span><span class="tag">海拔</span><span class="tag">品种</span>
-        <span class="tag">处理法</span><span class="tag">密度</span><span class="tag">含水率</span>
-        <span class="tag">水活性</span><span class="tag">Agtron 值</span>
-      </div>
-    </div>
-    <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">冲煮交互层</span>
-        <span class="layer-badge live">已落地</span>
-      </div>
-      <div class="layer-tags">
-        <span class="tag">粉水比</span><span class="tag">水温</span><span class="tag">研磨度</span>
-        <span class="tag">风味坐标图</span><span class="tag">OmniFlavor</span><span class="tag">冲煮笔记</span>
-      </div>
-    </div>
-    <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">专业数据展示层</span>
-        <span class="layer-badge live">已落地</span>
-      </div>
-      <div class="layer-tags">
-        <span class="tag">TDS 浓度</span><span class="tag">萃取率</span><span class="tag">多维检测数据</span>
-        <span class="tag">自有报告上传</span>
-      </div>
-    </div>
-    <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">工艺溯源层</span>
-        <span class="layer-badge building">建设中</span>
-      </div>
-      <div class="layer-tags">
-        <span class="tag">发酵时长</span><span class="tag">PH 值曲线</span><span class="tag">烘焙曲线</span><span class="tag">DTR</span>
-      </div>
-    </div>
-    <div class="layer-item">
-      <div class="layer-header">
-        <span class="layer-title">人文体验层</span>
-        <span class="layer-badge wip">持续完善</span>
-      </div>
-      <div class="layer-tags">
-        <span class="tag">烘焙师理念</span><span class="tag">庄园主故事</span><span class="tag">碳足迹报告</span>
-      </div>
-    </div>
+    <div class="layer-item"><div class="layer-header"><span class="layer-title">基础基因层</span><span class="layer-badge live">已落地</span></div><div class="layer-tags"><span class="tag">产地 GPS</span><span class="tag">海拔</span><span class="tag">品种</span><span class="tag">处理法</span><span class="tag">密度</span><span class="tag">含水率</span><span class="tag">水活性</span><span class="tag">Agtron 值</span></div></div>
+    <div class="layer-item"><div class="layer-header"><span class="layer-title">冲煮交互层</span><span class="layer-badge live">已落地</span></div><div class="layer-tags"><span class="tag">粉水比</span><span class="tag">水温</span><span class="tag">研磨度</span><span class="tag">风味坐标图</span><span class="tag">OmniFlavor</span><span class="tag">冲煮笔记</span></div></div>
+    <div class="layer-item"><div class="layer-header"><span class="layer-title">专业数据展示层</span><span class="layer-badge live">已落地</span></div><div class="layer-tags"><span class="tag">TDS 浓度</span><span class="tag">萃取率</span><span class="tag">多维检测数据</span><span class="tag">自有报告上传</span></div></div>
+    <div class="layer-item"><div class="layer-header"><span class="layer-title">工艺溯源层</span><span class="layer-badge building">建设中</span></div><div class="layer-tags"><span class="tag">发酵时长</span><span class="tag">PH 值曲线</span><span class="tag">烘焙曲线</span><span class="tag">DTR</span></div></div>
+    <div class="layer-item"><div class="layer-header"><span class="layer-title">人文体验层</span><span class="layer-badge wip">持续完善</span></div><div class="layer-tags"><span class="tag">烘焙师理念</span><span class="tag">庄园主故事</span><span class="tag">碳足迹报告</span></div></div>
   </div>
 
-  <div class="section-title" style="margin-top:14px;">与传统标签的本质区别</div>
+  <div class="section-title" style="margin-top:14px;">数字档案 vs 传统标签</div>
   <div class="card">
     <div class="compare-wrap">
       <table class="compare-table">
         <thead><tr><th></th><th style="color:var(--text-dim)">传统标签</th><th class="pro">DiFluid 档案</th></tr></thead>
         <tbody>
-          <tr><td>信息类型</td><td class="no">故事说明书</td><td class="yes">技术说明书</td></tr>
-          <tr><td>可验证性</td><td class="no">不可验证</td><td class="yes">设备真实检测</td></tr>
-          <tr><td>可复现性</td><td class="no">不可复现</td><td class="yes">批次数据模型</td></tr>
-          <tr><td>信任基础</td><td class="no">品牌信任</td><td class="yes">数据共识</td></tr>
+          <tr><td>信息类型</td><td class="no">风味描述</td><td class="yes">物理测量数据</td></tr>
+          <tr><td>可验证性</td><td class="no">依赖品牌背书</td><td class="yes">设备真实检测</td></tr>
+          <tr><td>可复现性</td><td class="no">难以复现</td><td class="yes">批次数据模型</td></tr>
+          <tr><td>信任基础</td><td class="no">品牌信任</td><td class="yes">品牌信任+数据共识</td></tr>
           <tr><td>更新机制</td><td class="no">静态印刷</td><td class="yes">随批次更新</td></tr>
         </tbody>
       </table>
@@ -503,20 +350,11 @@
   <div class="section-title">平台资源</div>
   <div class="resource-card">
     <div class="resource-icon green">📱</div>
-    <div>
-      <h4>用户触达</h4>
-      <p>CoffeeOS App <strong style="color:var(--green)">10万+</strong> 活跃用户，数字详情持续存档，联合营销，品牌专访等。</p>
-    </div>
+    <div><h4>用户触达</h4><p>CoffeeOS App <strong style="color:var(--green)">10万+</strong> 活跃用户，品牌主页与数字卡片持续展示，可嵌入品牌官网、小程序、社交媒体。</p></div>
   </div>
   <div class="resource-card">
     <div class="resource-icon orange">🎪</div>
-    <div>
-      <h4>线下曝光</h4>
-      <div class="tag-row">
-        <span class="tag">WBC 周边活动</span><span class="tag">精品咖啡展</span>
-        <span class="tag">冲煮赛 / 杯测赛</span><span class="tag">城市快闪</span>
-      </div>
-    </div>
+    <div><h4>线下曝光</h4><div class="tag-row"><span class="tag">WBC 周边活动</span><span class="tag">精品咖啡展</span><span class="tag">冲煮赛 / 杯测赛</span><span class="tag">城市快闪</span></div></div>
   </div>
   <div class="resource-card">
     <div class="resource-icon gold">🚚</div>
@@ -533,28 +371,22 @@
   </div>
 </div>
 
-<!-- 费用结构 -->
+<!-- 四、合作费用结构 -->
 <div class="section">
   <div class="section-title">合作费用结构</div>
   <div class="card">
     <div class="fee-row">
       <div class="fee-icon">📋</div>
-      <div>
-        <div class="fee-title">基础服务费</div>
-        <div class="fee-desc">按年收取，覆盖数字档案托管、二维码生成与维护、线下活动资源等 SaaS 平台服务。</div>
-      </div>
+      <div><div class="fee-title">基础服务费</div><div class="fee-desc">按年收取，覆盖数字档案托管、二维码生成与维护、品牌主页、数据报告、线下活动资源等 SaaS 平台服务。</div></div>
     </div>
     <div class="fee-row">
       <div class="fee-icon">💰</div>
-      <div>
-        <div class="fee-title">代理佣金（数据甄选会员专属）</div>
-        <div class="fee-desc">按实际成交金额收取，品牌商自主发货。所有交易数据实时记录，品牌商可随时查看销售明细与结算详情。</div>
-      </div>
+      <div><div class="fee-title">代理佣金（数据甄选会员专属）</div><div class="fee-desc">按平台实际成交金额收取，平台不持货，品牌商自主发货。所有交易数据实时记录，品牌商可随时查看销售明细与结算详情。</div></div>
     </div>
   </div>
 </div>
 
-<!-- 会员方案 -->
+<!-- 五、会员方案 -->
 <div class="section">
   <div class="section-title">会员方案</div>
   <div class="plan-tabs">
@@ -569,12 +401,14 @@
       <div class="plan-price" style="color:var(--green)">¥12,800 <span style="color:var(--text-muted)">/ 年</span></div>
       <div class="plan-commission">代理佣金：<strong>成交额 15%</strong></div>
       <div class="plan-fit">适合：精品咖啡品牌 · 独立烘焙工作室 · 连锁咖啡品牌 · 庄园代理商 · 成长型品牌</div>
-      <div class="plan-value">核心价值：完整的数字档案能力 + 平台分销渠道，快速建立数据化品牌形象</div>
+      <div class="plan-value">核心价值：完整的数字档案能力 + 数据甄选渠道，快速建立数据化品牌形象</div>
     </div>
     <div class="benefit-row"><span class="benefit-key">数字咖啡豆档案</span><span class="benefit-val yes">无限制</span></div>
     <div class="benefit-row"><span class="benefit-key">专业数据展示</span><span class="benefit-val yes">✓ 多维检测数据</span></div>
     <div class="benefit-row"><span class="benefit-key">防伪溯源二维码</span><span class="benefit-val yes">✓ 无限量</span></div>
-    <div class="benefit-row"><span class="benefit-key">分销渠道</span><span class="benefit-val yes">✓ 佣金 15%</span></div>
+    <div class="benefit-row"><span class="benefit-key">品牌主页</span><span class="benefit-val yes">增强展示页</span></div>
+    <div class="benefit-row"><span class="benefit-key">App 内曝光</span><span class="benefit-val yes">推荐位排期</span></div>
+    <div class="benefit-row"><span class="benefit-key">数据甄选渠道</span><span class="benefit-val yes">✓ 佣金 15%</span></div>
     <div class="benefit-row"><span class="benefit-key">线下活动</span><span class="benefit-val yes">不限 + 优先展位</span></div>
     <div class="benefit-row"><span class="benefit-key">赛事供豆</span><span class="benefit-val yes">优先邀请</span></div>
     <div class="benefit-row"><span class="benefit-key">数据报告</span><span class="benefit-val">月度详细报告</span></div>
@@ -591,16 +425,16 @@
       <div class="plan-price" style="color:var(--gold)">¥49,800 <span style="color:var(--text-muted)">/ 年</span></div>
       <div class="plan-commission">代理佣金：<strong>成交额 10%</strong></div>
       <div class="plan-fit">适合：头部精品品牌 · 咖啡庄园直营商 · 连锁品牌总部 · 专业烘焙机构 · 战略合作伙伴</div>
-      <div class="plan-value">核心价值：完整数字化品控能力 + 最优分销条件 + 硬件生态全覆盖 + 深度生态绑定</div>
+      <div class="plan-value">核心价值：完整数字化品控能力 + 最优数据甄选条件 + 硬件生态全覆盖 + 深度生态绑定</div>
     </div>
     <div class="benefit-row"><span class="benefit-key">数字咖啡豆档案</span><span class="benefit-val gold">无限制</span></div>
     <div class="benefit-row"><span class="benefit-key">专业数据展示</span><span class="benefit-val gold">✓ 全维度 + 自有报告</span></div>
     <div class="benefit-row"><span class="benefit-key">防伪溯源二维码</span><span class="benefit-val gold">✓ 无限量</span></div>
-    <div class="benefit-row"><span class="benefit-key">分销渠道</span><span class="benefit-val gold">✓ 优惠佣金 10%</span></div>
+    <div class="benefit-row"><span class="benefit-key">品牌主页</span><span class="benefit-val gold">旗舰定制页</span></div>
+    <div class="benefit-row"><span class="benefit-key">App 内曝光</span><span class="benefit-val gold">首页优先 + 专题页</span></div>
+    <div class="benefit-row"><span class="benefit-key">数据甄选渠道</span><span class="benefit-val gold">✓ 优惠佣金 10%</span></div>
     <div class="benefit-row"><span class="benefit-key">🎁 硬件设备礼包</span><span class="benefit-val"><span style="background:var(--gold-dim);color:var(--gold);border:1px solid rgba(245,158,11,0.3);border-radius:6px;padding:2px 8px;font-size:11px;font-weight:600;">价值约 ¥35,000</span></span></div>
-    <div class="hw-gift">
-      <strong>Flux 烘焙记录仪</strong> + <strong>OMIX 检测仪</strong> + <strong>Moment 测温风味仪</strong> + <strong>浓度仪（TDS）</strong> + <strong>高精度电子秤</strong>
-    </div>
+    <div class="hw-gift"><strong>Flux 烘焙记录仪</strong> + <strong>OMIX 检测仪</strong> + <strong>Moment 测温风味仪</strong> + <strong>浓度仪（TDS）</strong> + <strong>高精度电子秤</strong></div>
     <div class="benefit-row"><span class="benefit-key">线下活动</span><span class="benefit-val gold">不限 + 核心展位</span></div>
     <div class="benefit-row"><span class="benefit-key">赛事供豆</span><span class="benefit-val gold">官方合作伙伴</span></div>
     <div class="benefit-row"><span class="benefit-key">数据报告</span><span class="benefit-val gold">月度 + 年度洞察</span></div>
@@ -610,25 +444,19 @@
     <div class="benefit-row"><span class="benefit-key">品牌专属标识</span><span class="benefit-val gold">✓ Max 合作品牌</span></div>
   </div>
 
-  <!-- Compare -->
+  <!-- 方案对比 -->
   <div class="section-title" style="margin-top:20px;">方案对比</div>
   <div class="card">
     <div class="compare-wrap">
       <table class="compare-table">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="pro">专业</th>
-            <th class="max">Max</th>
-          </tr>
-        </thead>
+        <thead><tr><th></th><th class="pro">专业</th><th class="max">Max</th></tr></thead>
         <tbody>
           <tr><td>基础服务费</td><td style="color:var(--green)">¥12,800</td><td style="color:var(--gold)">¥49,800</td></tr>
           <tr><td>代理佣金</td><td class="yes">15%</td><td class="gold">10%</td></tr>
           <tr><td>档案数量</td><td class="yes">无限制</td><td class="gold">无限制</td></tr>
           <tr><td>专业数据展示</td><td class="yes">✓</td><td class="gold">✓ 全维度</td></tr>
           <tr><td>硬件礼包</td><td class="no">—</td><td class="gold">✓ ~¥35,000</td></tr>
-          <tr><td>分销渠道</td><td class="yes">✓</td><td class="gold">✓ 优惠费率</td></tr>
+          <tr><td>数据甄选渠道</td><td class="yes">✓</td><td class="gold">✓ 优惠费率</td></tr>
           <tr><td>线下活动</td><td class="yes">不限+优先</td><td class="gold">不限+核心</td></tr>
           <tr><td>赛事供豆</td><td class="yes">优先邀请</td><td class="gold">官方合作</td></tr>
           <tr><td>联合营销</td><td class="yes">2次/年</td><td class="gold">4次+专访</td></tr>
@@ -640,10 +468,7 @@
 
   <div class="promo-banner">
     <div class="pi">💡</div>
-    <div>
-      <h4>首年限时优惠</h4>
-      <p>2025年内完成签约：专业会员 <strong style="color:var(--orange)">8折 ¥10,240</strong>，Max 会员 <strong style="color:var(--orange)">7.5折 ¥37,350</strong></p>
-    </div>
+    <div><h4>首年限时优惠</h4><p>2025年内完成签约：专业会员 <strong style="color:var(--orange)">8折 ¥10,240</strong>，Max 会员 <strong style="color:var(--orange)">7.5折 ¥37,350</strong></p></div>
   </div>
 </div>
 
@@ -651,29 +476,12 @@
 <div class="section">
   <div class="section-title">加入流程</div>
   <div class="card">
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-content"><h4>提交申请</h4><p>填写入驻申请表，提供品牌营业执照、产品资质及代表性咖啡豆样品信息</p></div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-content"><h4>资质审核</h4><p>平台团队 3 个工作日内完成审核，确认品牌符合精品咖啡品质标准</p></div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-content"><h4>选择方案 & 签约</h4><p>根据品牌规模选择合适方案，完成服务协议签署与费用支付</p></div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-content"><h4>档案录入</h4><p>自主录入咖啡豆信息，或由平台协助创建首批数字档案（Max 会员含驻场协助）</p></div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">5</div>
-      <div class="step-content"><h4>正式上线</h4><p>数字咖啡豆在 CoffeeOS App 及品牌主页发布，防伪二维码同步生效</p></div>
-    </div>
-    <div style="background:var(--green-dim);border:1px solid rgba(74,222,128,0.2);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12px;color:var(--green);text-align:center;">
-      预计从申请到上线：<strong>5–7 个工作日</strong>
-    </div>
+    <div class="step-item"><div class="step-num">1</div><div class="step-content"><h4>提交申请</h4><p>填写入驻申请表，提供品牌营业执照、产品资质及代表性咖啡豆样品信息</p></div></div>
+    <div class="step-item"><div class="step-num">2</div><div class="step-content"><h4>资质审核</h4><p>平台团队 3 个工作日内完成审核，确认品牌符合精品咖啡品质标准</p></div></div>
+    <div class="step-item"><div class="step-num">3</div><div class="step-content"><h4>选择方案 & 签约</h4><p>根据品牌规模选择合适方案，完成服务协议签署与费用支付</p></div></div>
+    <div class="step-item"><div class="step-num">4</div><div class="step-content"><h4>档案录入</h4><p>自主录入咖啡豆信息，或由平台协助创建首批数字档案（Max 会员含驻场协助）</p></div></div>
+    <div class="step-item"><div class="step-num">5</div><div class="step-content"><h4>正式上线</h4><p>数字咖啡豆在 CoffeeOS App 及品牌主页发布，防伪二维码同步生效</p></div></div>
+    <div style="background:var(--green-dim);border:1px solid rgba(74,222,128,0.2);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:12px;color:var(--green);text-align:center;">预计从申请到上线：<strong>5–7 个工作日</strong></div>
   </div>
 </div>
 
@@ -681,26 +489,23 @@
 <div class="section">
   <div class="section-title">联系我们</div>
   <div class="card">
-    <div class="contact-item">
-      <div class="contact-icon">📧</div>
-      <div><div class="contact-label">商务合作邮箱</div><div class="contact-val">[business@example.com]</div></div>
-    </div>
+    <div class="contact-item"><div class="contact-icon">📧</div><div><div class="contact-label">商务合作邮箱</div><div class="contact-val">[business@example.com]</div></div></div>
+    <div class="contact-item"><div class="contact-icon">💬</div><div><div class="contact-label">微信公众号</div><div class="contact-val">[公众号名称]</div></div></div>
+    <div class="contact-item"><div class="contact-icon">📱</div><div><div class="contact-label">商务微信</div><div class="contact-val">[微信号]</div></div></div>
+    <div class="contact-item"><div class="contact-icon">🌐</div><div><div class="contact-label">官方网站</div><div class="contact-val">[https://www.example.com]</div></div></div>
   </div>
+  <div class="qr-placeholder"><div class="qr-box">⬛</div>扫描二维码添加商务微信<br>获取完整版招募手册与入驻申请表</div>
 </div>
 
-<div class="footer">
-  © 2026 DiFluid · CoffeeOS 数字咖啡豆平台 · 保留所有权利<br>
-  本文档内容仅供合作洽谈参考，最终权益以正式服务协议为准
-</div>
+<div class="footer">© 2026 DiFluid · CoffeeOS 数字咖啡豆平台 · 保留所有权利<br>本文档内容仅供合作洽谈参考，最终权益以正式服务协议为准</div>
 
 <script>
-  function switchPlan(type, btn) {
-    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
-    document.querySelectorAll('.plan-tab').forEach(t => t.classList.remove('active-pro','active-max'));
-    document.getElementById('plan-' + type).classList.add('active');
-    btn.classList.add('active-' + type);
-  }
+function switchPlan(type, btn) {
+  document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.plan-tab').forEach(t => t.classList.remove('active-pro','active-max'));
+  document.getElementById('plan-' + type).classList.add('active');
+  btn.classList.add('active-' + type);
+}
 </script>
 </body>
 </html>
-
